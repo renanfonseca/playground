@@ -1,1 +1,9 @@
+# Java files
+*.jar
+*.war
+*.ear
+*.class
+
+
+# Eclipse files
 java/.metadata
