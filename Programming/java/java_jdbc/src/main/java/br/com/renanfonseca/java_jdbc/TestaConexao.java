@@ -7,8 +7,8 @@ public class TestaConexao {
 
 	public static void main(String[] args) throws SQLException {
 
-		CriaConexao criaConexao = new CriaConexao();
-		Connection connection = criaConexao.recurarConexao();
+		ConnectionFactory factory = new ConnectionFactory();
+		Connection connection = factory.recurarConexao();
 
 		System.out.println("Fechando conexão!");
 
