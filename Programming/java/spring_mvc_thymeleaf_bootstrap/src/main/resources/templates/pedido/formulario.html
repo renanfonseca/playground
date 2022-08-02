@@ -1,0 +1,52 @@
+<html>
+<head th:replace="~{head::head}">
+
+</head>
+<body>
+	<div class="logo-container mb-3 p-3 d-flex justify-content-between">
+		<span class="logo">Spring MVC</span> <span class="mt-3">login</span>
+	</div>
+	<div class="container">
+		<div class="jumbotron mb-0">
+			<h1 class="display-4">Novo Pedido</h1>
+		</div>
+
+		<div class="card mt-3">
+
+			<form th:object="${requisicaoNovoPedido}" class="card-body"
+				action="/pedido/novo" method="POST">
+				<div>
+					<label for="nomeProduto">Produto</label> <input class="is-invalid"
+						th:field="*{nomeProduto}" name="nomeProduto"
+						placeholder="nome do produto" /> <small>Informa qual o
+						nome do produto.</small>
+					<div class="invalid-feedback" th:errors="*{nomeProduto}">Errors
+						produto</div>
+				</div>
+				<div>
+					<label for="ulrProduto">Url</label> <input th:field="*{ulrProduto}"
+						name="ulrProduto" placeholder="url do produto" /> <small>Procure
+						em um site o produto que você deseja e cole a url da página aqui.</small>
+					<div th:errors="*{ulrProduto}">Errors produto</div>
+				</div>
+				<div>
+					<label for="ulrImagem">Imagem</label> <input
+						th:field="*{ulrImagem}" name="ulrImagem"
+						placeholder="url da imagem" /> <small>Copie a url de uma
+						boa imagem do produto e cole aqui para ajudar a conseguir
+						compradores.</small>
+					<div th:errors="*{ulrImagem}">Errors produto</div>
+				</div>
+				<div>
+					<label for="descricao">Descrição</label>
+					<textarea th:field="*{descricao}" name="descricao"
+						placeholder="Adicione detalhes importantes para ajudar o comprador."></textarea>
+					<div th:errors="*{descricao}">Errors produto</div>
+				</div>
+				<button type="submit">Cadastrar</button>
+			</form>
+
+		</div>
+	</div>
+</body>
+</html>
